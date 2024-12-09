@@ -1,0 +1,34 @@
+[project]
+name = "cd_diagram"
+version = "0.0.1"
+authors = [
+  { name="Alberto Azzari", email="alberto.azzari@univr.it" },
+]
+description = ""
+requires-python = ">=3.12"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "maturin",
+    "numpy",
+    "pandas",
+    "scikit-posthocs",
+    "scipy",
+    "typeguard",
+]
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+
+[project.urls]
+Homepage = "https://github.com/albertoazzari/cd-diagram"
+Issues = "https://github.com/albertoazzari/cd-diagram/issues"
+
