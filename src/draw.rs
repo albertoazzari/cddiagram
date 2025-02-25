@@ -11,12 +11,12 @@ fn get_relative_x(value: f64, n_items: usize, interval_len: f64) -> f64 {
     ((n_items as f64 - value + 1.0) / n_items as f64) * interval_len
 }
 
-fn draw_ruler(mut document: SVG, n_items: usize) -> SVG {
+fn draw_ruler(mut document: SVG, n_items: usize, width: usize, height: usize) -> SVG {
     let attributes = document.get_attributes();
 
     // Get width and height
-    let width = attributes.get("width").unwrap().parse::<usize>().unwrap();
-    let height = attributes.get("height").unwrap().parse::<usize>().unwrap();
+    // let width = attributes.get("width").unwrap().parse::<usize>().unwrap();
+    // let height = attributes.get("height").unwrap().parse::<usize>().unwrap();
 
     // Set start_x and start_y to 10% of the width of the figure
     let start_y = START_Y_PERC * height as f64;
@@ -76,12 +76,18 @@ fn draw_ruler(mut document: SVG, n_items: usize) -> SVG {
     document
 }
 
-fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64]) -> SVG {
+fn draw_models(
+    mut document: SVG,
+    labels: &[String],
+    avg_ranks: &[f64],
+    width: usize,
+    height: usize,
+) -> SVG {
     let attributes = document.get_attributes();
 
     // Get width and height
-    let width = attributes.get("width").unwrap().parse::<usize>().unwrap();
-    let height = attributes.get("height").unwrap().parse::<usize>().unwrap();
+    // let width = attributes.get("width").unwrap().parse::<usize>().unwrap();
+    // let height = attributes.get("height").unwrap().parse::<usize>().unwrap();
 
     // Set start_x and start_y to 10% of the width of the figure
     let start_y = START_Y_PERC * height as f64;
@@ -188,12 +194,12 @@ fn draw_clique(mut document: SVG, start_x: f64, start_y: f64, clique_len: f64) -
     document
 }
 
-fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64]) -> SVG {
+fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64], width: usize, height: usize) -> SVG {
     let attributes = document.get_attributes();
 
     // Get width and height
-    let width = attributes.get("width").unwrap().parse::<usize>().unwrap();
-    let height = attributes.get("height").unwrap().parse::<usize>().unwrap();
+    // let width = attributes.get("width").unwrap().parse::<usize>().unwrap();
+    // let height = attributes.get("height").unwrap().parse::<usize>().unwrap();
 
     // Set start_x and start_y
     let start_y = (START_Y_PERC - 0.15) * height as f64;
@@ -219,7 +225,7 @@ fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64]) -> SVG {
 
     document = document.add(text);
 
-    let start_y = (START_Y_PERC+0.02) * height as f64;
+    let start_y = (START_Y_PERC + 0.02) * height as f64;
     let mut h = 0;
     let mut last_x2 = -1.0;
     for i in (0..avg_ranks.len()).rev() {
@@ -256,7 +262,6 @@ fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64]) -> SVG {
     document
 }
 
-
 #[pyfunction]
 #[pyo3(signature = (cd, avg_ranks, labels, title=None, out_file=None, fig_size=None))]
 pub fn cd_diagram(
@@ -269,10 +274,9 @@ pub fn cd_diagram(
 ) -> PyResult<()> {
     let (width, height) = fig_size.unwrap_or((512, 256));
 
-    let mut document = Document::new()
-        .set("height", height)
-        .set("width", width);
-        //.set("style", "background-color:white");
+    let mut document = Document::new(); //.set("height", height).set("width", width);
+
+    //.set("style", "background-color:white");
 
     // Draw title
     let title = title.unwrap_or("".to_string());
@@ -287,55 +291,55 @@ pub fn cd_diagram(
 
     document = document.add(text);
     // Draw ruler
-    document = draw_ruler(document, avg_ranks.len()-1);
+    document = draw_ruler(document, avg_ranks.len() - 1, width, height);
     // Draw models
-    document = draw_models(document, &labels, &avg_ranks);
+    document = draw_models(document, &labels, &avg_ranks, width, height);
     // Draw cliques
-    document = draw_cliques(document, cd, &avg_ranks);
+    document = draw_cliques(document, cd, &avg_ranks, width, height);
 
     svg::save(out_file.unwrap_or("image.svg".to_string()), &document).unwrap();
     Ok(())
-
 }
 
-// #[test]
-// pub fn test_cd_diagram() {
-//     let cd = 1.918239276002866;
-//     let labels = [
-//         "EUCLIDEAN",
-//         "CATCH22EUCL",
-//         "ERP",
-//         "LCSS",
-//         "DTW",
-//         "CDTW",
-//         "DDTW",
-//         "WDTW",
-//         "WDDTW",
-//         "ADTW",
-//         "MSM",
-//         "TWE",
-//         "SBD",
-//         "MPDIST",
-//         "TSRF-Dist",
-//     ];
-//     let avg_ranks = [
-//         8.8760, 10.4920, 6.8040, 7.9560, 7.3600, 6.7200, 10.0680, 7.0680, 9.8320, 6.8520, 7.3880,
-//         7.8520, 8.0160, 11.6760, 3.0400,
-//     ];
-//     let mut avg_ranks = (0..avg_ranks.len())
-//         .zip(avg_ranks)
-//         .map(|(i, v)| (i, v))
-//         .collect::<Vec<_>>();
-//     avg_ranks.sort_unstable_by(|x, y| y.1.partial_cmp(&x.1).unwrap());
-//     cd_diagram(
-//         cd,
-//         &avg_ranks
-//             .iter()
-//             .map(|(i, _)| labels[*i])
-//             .collect::<Vec<_>>(),
-//         &avg_ranks.iter().map(|(_, v)| *v).collect::<Vec<f64>>(),
-//         None,
-//         None,
-//         None,
-//     )
-// }
+#[test]
+pub fn test_cd_diagram() {
+    let cd = 1.918239276002866;
+    let labels = [
+        "EUCLIDEAN",
+        "CATCH22EUCL",
+        "ERP",
+        "LCSS",
+        "DTW",
+        "CDTW",
+        "DDTW",
+        "WDTW",
+        "WDDTW",
+        "ADTW",
+        "MSM",
+        "TWE",
+        "SBD",
+        "MPDIST",
+        "TSRF-Dist",
+    ];
+    let avg_ranks = [
+        8.8760, 10.4920, 6.8040, 7.9560, 7.3600, 6.7200, 10.0680, 7.0680, 9.8320, 6.8520, 7.3880,
+        7.8520, 8.0160, 11.6760, 3.0400,
+    ];
+    let mut avg_ranks = (0..avg_ranks.len())
+        .zip(avg_ranks)
+        .map(|(i, v)| (i, v))
+        .collect::<Vec<_>>();
+    avg_ranks.sort_unstable_by(|x, y| y.1.partial_cmp(&x.1).unwrap());
+    cd_diagram(
+        cd,
+        avg_ranks.iter().map(|(_, v)| *v).collect::<Vec<f64>>(),
+        avg_ranks
+            .iter()
+            .map(|(i, _)| labels[*i].to_string())
+            .collect::<Vec<_>>(),
+        None,
+        None,
+        None,
+    )
+    .unwrap();
+}
