@@ -152,7 +152,6 @@ fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64]) -> SVG {
         document = document.add(h_node);
         document = document.add(text);
     }
-    println!("");
     document
 }
 
