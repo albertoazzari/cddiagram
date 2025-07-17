@@ -1,103 +1,103 @@
-<svg height="256" width="512" xmlns="http://www.w3.org/2000/svg">
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="256" y="25.6">
+<svg height="376" style="background-color:white" width="617" xmlns="http://www.w3.org/2000/svg">
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="308.5" y="37.6">
 
 </text>
-<path d="M102.4,102.4 L409.6,102.4 z" fill="none" stroke="black" stroke-width="3"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="102.4" y="79.60000000000001">
+<path d="M123.4,150.4 L493.6,150.4 z" fill="none" stroke="black" stroke-width="3"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="123.4" y="121.6">
 8
 </text>
-<path d="M102.4,103.9 L102.4,89.6 z" fill="none" stroke="black" stroke-width="3"/>
-<path d="M124.34286,103.9 L124.34286,96 z" fill="none" stroke="black" stroke-width="3"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="146.2857142857143" y="79.60000000000001">
+<path d="M123.4,151.9 L123.4,131.6 z" fill="none" stroke="black" stroke-width="3"/>
+<path d="M149.84285,151.9 L149.84285,141 z" fill="none" stroke="black" stroke-width="3"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="176.2857142857143" y="121.6">
 7
 </text>
-<path d="M146.28572,103.9 L146.28572,89.6 z" fill="none" stroke="black" stroke-width="3"/>
-<path d="M168.22858,103.9 L168.22858,96 z" fill="none" stroke="black" stroke-width="3"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="190.17142857142858" y="79.60000000000001">
+<path d="M176.28572,151.9 L176.28572,131.6 z" fill="none" stroke="black" stroke-width="3"/>
+<path d="M202.72858,151.9 L202.72858,141 z" fill="none" stroke="black" stroke-width="3"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="229.17142857142858" y="121.6">
 6
 </text>
-<path d="M190.17143,103.9 L190.17143,89.6 z" fill="none" stroke="black" stroke-width="3"/>
-<path d="M212.11429,103.9 L212.11429,96 z" fill="none" stroke="black" stroke-width="3"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="234.05714285714288" y="79.60000000000001">
+<path d="M229.17143,151.9 L229.17143,131.6 z" fill="none" stroke="black" stroke-width="3"/>
+<path d="M255.61429,151.9 L255.61429,141 z" fill="none" stroke="black" stroke-width="3"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="282.0571428571429" y="121.6">
 5
 </text>
-<path d="M234.05714,103.9 L234.05714,89.6 z" fill="none" stroke="black" stroke-width="3"/>
-<path d="M256,103.9 L256,96 z" fill="none" stroke="black" stroke-width="3"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="277.9428571428572" y="79.60000000000001">
+<path d="M282.05713,151.9 L282.05713,131.6 z" fill="none" stroke="black" stroke-width="3"/>
+<path d="M308.5,151.9 L308.5,141 z" fill="none" stroke="black" stroke-width="3"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="334.9428571428572" y="121.6">
 4
 </text>
-<path d="M277.94287,103.9 L277.94287,89.6 z" fill="none" stroke="black" stroke-width="3"/>
-<path d="M299.8857,103.9 L299.8857,96 z" fill="none" stroke="black" stroke-width="3"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="321.8285714285715" y="79.60000000000001">
+<path d="M334.94287,151.9 L334.94287,131.6 z" fill="none" stroke="black" stroke-width="3"/>
+<path d="M361.3857,151.9 L361.3857,141 z" fill="none" stroke="black" stroke-width="3"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="387.8285714285714" y="121.6">
 3
 </text>
-<path d="M321.82858,103.9 L321.82858,89.6 z" fill="none" stroke="black" stroke-width="3"/>
-<path d="M343.77142,103.9 L343.77142,96 z" fill="none" stroke="black" stroke-width="3"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="365.7142857142858" y="79.60000000000001">
+<path d="M387.82858,151.9 L387.82858,131.6 z" fill="none" stroke="black" stroke-width="3"/>
+<path d="M414.27142,151.9 L414.27142,141 z" fill="none" stroke="black" stroke-width="3"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="440.7142857142858" y="121.6">
 2
 </text>
-<path d="M365.7143,103.9 L365.7143,89.6 z" fill="none" stroke="black" stroke-width="3"/>
-<path d="M387.65714,103.9 L387.65714,96 z" fill="none" stroke="black" stroke-width="3"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="409.6" y="79.60000000000001">
+<path d="M440.7143,151.9 L440.7143,131.6 z" fill="none" stroke="black" stroke-width="3"/>
+<path d="M467.15714,151.9 L467.15714,141 z" fill="none" stroke="black" stroke-width="3"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="493.6" y="121.6">
 1
 </text>
-<path d="M409.6,103.9 L409.6,89.6 z" fill="none" stroke="black" stroke-width="3"/>
-<path d="M161.28,102.4 L161.28,128.2 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M161.28,128.2 L97.28,128.2 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="94.72" y="128.2">
+<path d="M493.6,151.9 L493.6,131.6 z" fill="none" stroke="black" stroke-width="3"/>
+<path d="M194.355,150.4 L194.355,182.2 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M194.355,182.2 L117.23,182.2 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="114.14500000000001" y="182.20000000000002">
 model2
 </text>
-<path d="M166.4,102.4 L166.4,141 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M166.4,141 L97.28,141 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="94.72" y="141">
+<path d="M200.525,150.4 L200.525,201 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M200.525,201 L117.23,201 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="114.14500000000001" y="201">
 model1
 </text>
-<path d="M215.04,102.4 L215.04,153.8 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M215.04,153.8 L97.28,153.8 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="94.72" y="153.8">
+<path d="M259.14,150.4 L259.14,219.8 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M259.14,219.8 L117.23,219.8 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="114.14500000000001" y="219.8">
 model3
 </text>
-<path d="M254.72,102.4 L254.72,166.6 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M254.72,166.6 L97.28,166.6 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="94.72" y="166.60000000000002">
+<path d="M306.9575,150.4 L306.9575,238.6 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M306.9575,238.6 L117.23,238.6 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="114.14500000000001" y="238.60000000000002">
 model4
 </text>
-<path d="M320,102.4 L320,166.6 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M320,166.6 L414.72,166.6 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="417.28000000000003" y="166.60000000000002">
+<path d="M385.625,150.4 L385.625,238.6 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M385.625,238.6 L499.77,238.6 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="502.855" y="238.60000000000002">
 model5
 </text>
-<path d="M328.96,102.4 L328.96,153.8 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M328.96,153.8 L414.72,153.8 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="417.28000000000003" y="153.8">
+<path d="M396.4225,150.4 L396.4225,219.8 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M396.4225,219.8 L499.77,219.8 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="502.855" y="219.8">
 model6
 </text>
-<path d="M363.52,102.4 L363.52,141 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M363.52,141 L414.72,141 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="417.28000000000003" y="141">
+<path d="M438.07,150.4 L438.07,201 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M438.07,201 L499.77,201 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="502.855" y="201">
 model7
 </text>
-<path d="M391.68,102.4 L391.68,128.2 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M391.68,128.2 L414.72,128.2 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="417.28000000000003" y="128.2">
+<path d="M472.005,150.4 L472.005,182.2 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M472.005,182.2 L499.77,182.2 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="502.855" y="182.20000000000002">
 model8
 </text>
-<rect fill="red" height="3" width="3" x="62.59559475792429" y="65.06"/>
-<path d="M65.5956,66.56 L139.2044,66.56 z" fill="none" stroke="red" stroke-width="1.5"/>
-<rect fill="red" height="3" width="3" x="139.20440524207572" y="65.06"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="102.4" y="64">
+<rect fill="red" height="3" width="3" x="76.04781633913923" y="96.26"/>
+<path d="M79.04781,97.76 L167.75218,97.76 z" fill="none" stroke="red" stroke-width="1.5"/>
+<rect fill="red" height="3" width="3" x="167.7521836608608" y="96.26"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="123.4" y="94">
 CD=1.92
 </text>
-<rect fill="red" height="3" width="3" x="317" y="106.02000000000001"/>
-<path d="M320,107.52 L391.68,107.52 z" fill="none" stroke="red" stroke-width="1.5"/>
-<rect fill="red" height="3" width="3" x="391.68000000000006" y="106.02000000000001"/>
-<rect fill="red" height="3" width="3" x="251.72000000000003" y="109.86000000000001"/>
-<path d="M254.72,111.36 L320,111.36 z" fill="none" stroke="red" stroke-width="1.5"/>
-<rect fill="red" height="3" width="3" x="320" y="109.86000000000001"/>
-<rect fill="red" height="3" width="3" x="212.04000000000002" y="113.70000000000002"/>
-<path d="M215.04,115.2 L254.72,115.2 z" fill="none" stroke="red" stroke-width="1.5"/>
-<rect fill="red" height="3" width="3" x="254.72000000000003" y="113.70000000000002"/>
-<rect fill="red" height="3" width="3" x="158.28" y="117.54"/>
-<path d="M161.28,119.04 L215.04,119.04 z" fill="none" stroke="red" stroke-width="1.5"/>
-<rect fill="red" height="3" width="3" x="215.04000000000002" y="117.54"/>
+<rect fill="red" height="3" width="3" x="382.625" y="156.42000000000002"/>
+<path d="M385.625,157.92 L472.005,157.92 z" fill="none" stroke="red" stroke-width="1.5"/>
+<rect fill="red" height="3" width="3" x="472.005" y="156.42000000000002"/>
+<rect fill="red" height="3" width="3" x="303.95750000000004" y="162.06"/>
+<path d="M306.9575,163.56 L385.625,163.56 z" fill="none" stroke="red" stroke-width="1.5"/>
+<rect fill="red" height="3" width="3" x="385.625" y="162.06"/>
+<rect fill="red" height="3" width="3" x="256.14000000000004" y="167.70000000000002"/>
+<path d="M259.14,169.2 L306.9575,169.2 z" fill="none" stroke="red" stroke-width="1.5"/>
+<rect fill="red" height="3" width="3" x="306.95750000000004" y="167.70000000000002"/>
+<rect fill="red" height="3" width="3" x="191.35500000000002" y="173.34"/>
+<path d="M194.355,174.84 L259.14,174.84 z" fill="none" stroke="red" stroke-width="1.5"/>
+<rect fill="red" height="3" width="3" x="259.14000000000004" y="173.34"/>
 </svg>

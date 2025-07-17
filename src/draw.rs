@@ -266,12 +266,21 @@ pub fn cd_diagram(
     out_file: Option<String>,
     fig_size: Option<(usize, usize)>,
 ) -> PyResult<()> {
-    let (width, height) = fig_size.unwrap_or((512, 256));
+
+    let num_ranks = avg_ranks.len();
+    let base_width = 512;
+    let base_height = 256;
+    let delta = 15;
+    let computed_width = base_width + (num_ranks - 1) * delta;
+    let computed_height = base_height + num_ranks * delta;
+
+    let (width, height) = fig_size.unwrap_or((computed_width, computed_height));
+    // let (width, height) = fig_size.unwrap_or((512, 256));
 
     let mut document = Document::new()
         .set("height", height)
-        .set("width", width);
-        //.set("style", "background-color:white");
+        .set("width", width)
+        .set("style", "background-color:white");
 
     // Draw title
     let title = title.unwrap_or("".to_string());
