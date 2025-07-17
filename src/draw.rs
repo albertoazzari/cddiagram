@@ -34,6 +34,7 @@ fn draw_ruler(mut document: SVG, n_items: usize) -> SVG {
         .set("d", ruler);
     document = document.add(ruler);
 
+    let width_stride_perc = 1.0 / n_items as f64;
     let n_lines = n_items * 2;
     let step = (end_x as f64 - start_x as f64) / n_lines as f64;
     for i in 0..n_lines + 1 {
@@ -88,6 +89,7 @@ fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64]) -> SVG {
     let start_x = 0.2 * width as f64;
     let end_x = 0.8 * width as f64;
 
+    let heigth_stride_perc = 1.0 / labels.len() as f64;
     let half_count = labels.len() / 2;
 
     for (i, (label, value)) in labels.iter().zip(avg_ranks).enumerate() {
@@ -99,7 +101,7 @@ fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64]) -> SVG {
         // Draw line
         if i < half_count {
             let end_y =
-                start_y + (0.05 * ((i + 1) * height) as f64) + FONT_SIZE as f64 + STROKE_WIDTH;
+                start_y + (heigth_stride_perc * ((i + 1) * height) as f64) + FONT_SIZE as f64 + STROKE_WIDTH;
             v_line = Data::new()
                 .move_to((x, start_y))
                 .line_to((x, end_y))
@@ -118,7 +120,7 @@ fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64]) -> SVG {
                 .set("y", end_y);
         } else {
             let end_y = start_y as f64
-                + (0.05 * ((labels.len() - i) * height) as f64)
+                + (heigth_stride_perc * ((labels.len() - i) * height) as f64)
                 + FONT_SIZE as f64
                 + STROKE_WIDTH;
             v_line = Data::new()
@@ -217,7 +219,7 @@ fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64]) -> SVG {
         .set("y", start_y as f64);
 
     document = document.add(text);
-
+    let heigth_stride_perc = 1.0 / (avg_ranks.len() * 3) as f64;
     let start_y = (START_Y_PERC+0.02) * height as f64;
     let mut h = 0;
     let mut last_x2 = -1.0;
@@ -244,7 +246,7 @@ fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64]) -> SVG {
                 document = draw_clique(
                     document,
                     x2,
-                    start_y + 0.015 * (h * height) as f64,
+                    start_y + heigth_stride_perc * (h * height) as f64,
                     (x1 - x2).abs(),
                 );
                 h += 1;
@@ -267,8 +269,14 @@ pub fn cd_diagram(
     fig_size: Option<(usize, usize)>,
 ) -> PyResult<()> {
     
-    let (width, height) = fig_size.unwrap_or((512, 256));
+    let delta = 8;
+    let offset_heigth = 32;
+    let (width, height) = fig_size.unwrap_or((512, 256.max(labels.len() * delta + offset_heigth)));
 
+    let ruler_step = 6;
+    let number = (labels.len().ilog10()+1) * ruler_step;
+    let min_ruler_width = number * labels.len() as u32;
+    let width = width.max(((min_ruler_width as f64)/0.6) as usize);
     let mut document = Document::new()
         .set("height", height)
         .set("width", width)
@@ -297,45 +305,3 @@ pub fn cd_diagram(
     Ok(())
 
 }
-
-// #[test]
-// pub fn test_cd_diagram() {
-//     let cd = 1.918239276002866;
-//     let labels = [
-//         "EUCLIDEAN",
-//         "CATCH22EUCL",
-//         "ERP",
-//         "LCSS",
-//         "DTW",
-//         "CDTW",
-//         "DDTW",
-//         "WDTW",
-//         "WDDTW",
-//         "ADTW",
-//         "MSM",
-//         "TWE",
-//         "SBD",
-//         "MPDIST",
-//         "TSRF-Dist",
-//     ];
-//     let avg_ranks = [
-//         8.8760, 10.4920, 6.8040, 7.9560, 7.3600, 6.7200, 10.0680, 7.0680, 9.8320, 6.8520, 7.3880,
-//         7.8520, 8.0160, 11.6760, 3.0400,
-//     ];
-//     let mut avg_ranks = (0..avg_ranks.len())
-//         .zip(avg_ranks)
-//         .map(|(i, v)| (i, v))
-//         .collect::<Vec<_>>();
-//     avg_ranks.sort_unstable_by(|x, y| y.1.partial_cmp(&x.1).unwrap());
-//     cd_diagram(
-//         cd,
-//         &avg_ranks
-//             .iter()
-//             .map(|(i, _)| labels[*i])
-//             .collect::<Vec<_>>(),
-//         &avg_ranks.iter().map(|(_, v)| *v).collect::<Vec<f64>>(),
-//         None,
-//         None,
-//         None,
-//     )
-// }
