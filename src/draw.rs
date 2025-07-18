@@ -88,7 +88,7 @@ fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64], lowest_c
     let start_x = 0.2 * width as f64;
     let end_x = 0.8 * width as f64;
 
-    let heigth_stride_perc = 1.0 / (labels.len() + 1) as f64;
+    let heigth_stride_perc = 1.0 / (labels.len() + 1) as f64 * 2.0;
     let half_count = labels.len() / 2;
 
     for (i, (label, value)) in labels.iter().zip(avg_ranks).enumerate() {
@@ -236,7 +236,7 @@ fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64]) -> (SVG, f64) {
         .set("y", start_y as f64);
 
     document = document.add(text);
-    let heigth_stride_perc = 1.0 / (avg_ranks.len() * 4) as f64;
+    let heigth_stride_perc = 1.0 / (avg_ranks.len() * 3) as f64;
     let start_y = (START_Y_PERC + 0.02) * height as f64;
     let mut h = 0;
     let mut last_x2 = -1.0;
