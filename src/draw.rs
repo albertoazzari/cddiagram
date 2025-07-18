@@ -34,7 +34,6 @@ fn draw_ruler(mut document: SVG, n_items: usize) -> SVG {
         .set("d", ruler);
     document = document.add(ruler);
 
-    let width_stride_perc = 1.0 / n_items as f64;
     let n_lines = n_items * 2;
     let step = (end_x as f64 - start_x as f64) / n_lines as f64;
     for i in 0..n_lines + 1 {
