@@ -167,8 +167,13 @@ fn draw_clique(
     start_y: f64,
     clique_len: f64,
     lowest_clique: &mut f64,
+    dry_run: bool,
 ) -> SVG {
     *lowest_clique = lowest_clique.max(start_y as f64);
+
+    if dry_run {
+        return document;
+    }
 
     let cd_line = Data::new()
         .move_to((start_x, start_y))
@@ -201,7 +206,7 @@ fn draw_clique(
     document
 }
 
-fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64]) -> (SVG, f64) {
+fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64], dry_run: bool) -> (SVG, f64) {
     let attributes = document.get_attributes();
 
     // Get width and height
@@ -222,6 +227,7 @@ fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64]) -> (SVG, f64) {
         start_y + (0.01 * height as f64),
         cd_len,
         &mut lowest_clique,
+        dry_run,
     );
 
     // Draw CD
@@ -265,6 +271,7 @@ fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64]) -> (SVG, f64) {
                     start_y + heigth_stride_perc * (h * height) as f64,
                     (x1 - x2).abs(),
                     &mut lowest_clique,
+                    dry_run,
                 );
                 h += 1;
             }
@@ -311,12 +318,16 @@ pub fn cd_diagram(
     document = document.add(text);
     // Draw ruler
     document = draw_ruler(document, avg_ranks.len() - 1);
-    // Draw cliques
+
+    // Get cliques position
     let lowest_clique;
-    (document, lowest_clique) = draw_cliques(document, cd, &avg_ranks);
+    (document, lowest_clique) = draw_cliques(document, cd, &avg_ranks, true);
 
     // Draw models
     document = draw_models(document, &labels, &avg_ranks, lowest_clique);
+
+    // Draw cliques
+    (document, _) = draw_cliques(document, cd, &avg_ranks, false);
 
     svg::save(out_file.unwrap_or("image.svg".to_string()), &document).unwrap();
     Ok(())
