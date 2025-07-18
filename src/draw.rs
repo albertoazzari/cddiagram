@@ -76,7 +76,7 @@ fn draw_ruler(mut document: SVG, n_items: usize) -> SVG {
     document
 }
 
-fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64]) -> SVG {
+fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64], lowest_clique: f64) -> SVG {
     let attributes = document.get_attributes();
 
     // Get width and height
@@ -84,7 +84,7 @@ fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64]) -> SVG {
     let height = attributes.get("height").unwrap().parse::<usize>().unwrap();
 
     // Set start_x and start_y to 10% of the width of the figure
-    let start_y = START_Y_PERC * height as f64;
+    let start_y = lowest_clique; // START_Y_PERC * height as f64;
     let start_x = 0.2 * width as f64;
     let end_x = 0.8 * width as f64;
 
@@ -161,7 +161,15 @@ fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64]) -> SVG {
     document
 }
 
-fn draw_clique(mut document: SVG, start_x: f64, start_y: f64, clique_len: f64) -> SVG {
+fn draw_clique(
+    mut document: SVG,
+    start_x: f64,
+    start_y: f64,
+    clique_len: f64,
+    lowest_clique: &mut f64,
+) -> SVG {
+    *lowest_clique = lowest_clique.max(start_y as f64);
+
     let cd_line = Data::new()
         .move_to((start_x, start_y))
         .line_to((start_x + clique_len, start_y))
@@ -193,7 +201,7 @@ fn draw_clique(mut document: SVG, start_x: f64, start_y: f64, clique_len: f64) -
     document
 }
 
-fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64]) -> SVG {
+fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64]) -> (SVG, f64) {
     let attributes = document.get_attributes();
 
     // Get width and height
@@ -206,12 +214,16 @@ fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64]) -> SVG {
     let end_x = 0.8 * width as f64;
     let cd_len = (end_x - start_x) * cd / avg_ranks.len() as f64;
 
+    let mut lowest_clique = 0.0;
+
     document = draw_clique(
         document,
         start_x - cd_len / 2.0,
         start_y + (0.01 * height as f64),
         cd_len,
+        &mut lowest_clique,
     );
+
     // Draw CD
     let text = Text::new(format!("CD={:.2}", cd))
         .set("fill", "none")
@@ -252,13 +264,14 @@ fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64]) -> SVG {
                     x2,
                     start_y + heigth_stride_perc * (h * height) as f64,
                     (x1 - x2).abs(),
+                    &mut lowest_clique,
                 );
                 h += 1;
             }
         }
     }
 
-    document
+    (document, lowest_clique)
 }
 
 #[pyfunction]
@@ -298,10 +311,12 @@ pub fn cd_diagram(
     document = document.add(text);
     // Draw ruler
     document = draw_ruler(document, avg_ranks.len() - 1);
-    // Draw models
-    document = draw_models(document, &labels, &avg_ranks);
     // Draw cliques
-    document = draw_cliques(document, cd, &avg_ranks);
+    let lowest_clique;
+    (document, lowest_clique) = draw_cliques(document, cd, &avg_ranks);
+
+    // Draw models
+    document = draw_models(document, &labels, &avg_ranks, lowest_clique);
 
     svg::save(out_file.unwrap_or("image.svg".to_string()), &document).unwrap();
     Ok(())
