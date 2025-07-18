@@ -42,44 +42,44 @@
 1
 </text>
 <path d="M409.6,103.9 L409.6,89.6 z" fill="none" stroke="black" stroke-width="3"/>
-<path d="M161.28,102.4 L161.28,147.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M161.28,147.4 L97.28,147.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="94.72" y="147.4">
+<path d="M161.28,102.4 L161.28,143.84445 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M161.28,143.84445 L97.28,143.84445 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="94.72" y="143.84444444444443">
 model2
 </text>
-<path d="M166.4,102.4 L166.4,179.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M166.4,179.4 L97.28,179.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="94.72" y="179.4">
+<path d="M166.4,102.4 L166.4,172.2889 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M166.4,172.2889 L97.28,172.2889 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="94.72" y="172.2888888888889">
 model1
 </text>
-<path d="M215.04,102.4 L215.04,211.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M215.04,211.4 L97.28,211.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="94.72" y="211.4">
+<path d="M215.04,102.4 L215.04,200.73334 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M215.04,200.73334 L97.28,200.73334 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="94.72" y="200.73333333333335">
 model3
 </text>
-<path d="M254.72,102.4 L254.72,243.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M254.72,243.4 L97.28,243.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="94.72" y="243.4">
+<path d="M254.72,102.4 L254.72,229.17778 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M254.72,229.17778 L97.28,229.17778 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="end" x="94.72" y="229.17777777777778">
 model4
 </text>
-<path d="M320,102.4 L320,243.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M320,243.4 L414.72,243.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="417.28000000000003" y="243.4">
+<path d="M320,102.4 L320,229.17778 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M320,229.17778 L414.72,229.17778 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="417.28000000000003" y="229.17777777777778">
 model5
 </text>
-<path d="M328.96,102.4 L328.96,211.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M328.96,211.4 L414.72,211.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="417.28000000000003" y="211.4">
+<path d="M328.96,102.4 L328.96,200.73334 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M328.96,200.73334 L414.72,200.73334 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="417.28000000000003" y="200.73333333333335">
 model6
 </text>
-<path d="M363.52,102.4 L363.52,179.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M363.52,179.4 L414.72,179.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="417.28000000000003" y="179.4">
+<path d="M363.52,102.4 L363.52,172.2889 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M363.52,172.2889 L414.72,172.2889 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="417.28000000000003" y="172.2888888888889">
 model7
 </text>
-<path d="M391.68,102.4 L391.68,147.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<path d="M391.68,147.4 L414.72,147.4 z" fill="none" stroke="black" stroke-width="1.5"/>
-<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="417.28000000000003" y="147.4">
+<path d="M391.68,102.4 L391.68,143.84445 z" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M391.68,143.84445 L414.72,143.84445 z" fill="none" stroke="black" stroke-width="1.5"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="start" x="417.28000000000003" y="143.84444444444443">
 model8
 </text>
 <rect fill="red" height="3" width="3" x="62.59559475792429" y="65.06"/>

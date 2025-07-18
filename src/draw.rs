@@ -88,7 +88,7 @@ fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64]) -> SVG {
     let start_x = 0.2 * width as f64;
     let end_x = 0.8 * width as f64;
 
-    let heigth_stride_perc = 1.0 / labels.len() as f64;
+    let heigth_stride_perc = 1.0 / (labels.len()+1) as f64;
     let half_count = labels.len() / 2;
 
     for (i, (label, value)) in labels.iter().zip(avg_ranks).enumerate() {
