@@ -88,7 +88,7 @@ fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64]) -> SVG {
     let start_x = 0.2 * width as f64;
     let end_x = 0.8 * width as f64;
 
-    let heigth_stride_perc = 1.0 / (labels.len()+1) as f64;
+    let heigth_stride_perc = 1.0 / (labels.len() + 1) as f64;
     let half_count = labels.len() / 2;
 
     for (i, (label, value)) in labels.iter().zip(avg_ranks).enumerate() {
@@ -98,9 +98,12 @@ fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64]) -> SVG {
 
         let x = start_x + get_relative_x(*value, labels.len(), (end_x - start_x) as f64);
         // Draw line
+        let color = if i % 2 == 0 { "gray" } else { "black" };
         if i < half_count {
-            let end_y =
-                start_y + (heigth_stride_perc * ((i + 1) * height) as f64) + FONT_SIZE as f64 + STROKE_WIDTH;
+            let end_y = start_y
+                + (heigth_stride_perc * ((i + 1) * height) as f64)
+                + FONT_SIZE as f64
+                + STROKE_WIDTH;
             v_line = Data::new()
                 .move_to((x, start_y))
                 .line_to((x, end_y))
@@ -111,10 +114,11 @@ fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64]) -> SVG {
                 .close();
             text = Text::new(format!("{}", label))
                 .set("fill", "none")
-                .set("stroke", "black")
+                .set("stroke", color)
                 .set("stroke-width", 1.0)
                 .set("font-size", FONT_SIZE)
                 .set("text-anchor", "end")
+                .set("dominant-baseline", "middle")
                 .set("x", start_x - 0.015 * width as f64)
                 .set("y", end_y);
         } else {
@@ -132,22 +136,23 @@ fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64]) -> SVG {
                 .close();
             text = Text::new(format!("{}", label))
                 .set("fill", "none")
-                .set("stroke", "black")
+                .set("stroke", color)
                 .set("stroke-width", 1.0)
                 .set("font-size", FONT_SIZE)
                 .set("text-anchor", "start")
+                .set("dominant-baseline", "middle")
                 .set("x", end_x + 0.015 * width as f64)
                 .set("y", end_y);
         }
         let v_node = Path::new()
             .set("fill", "none")
-            .set("stroke", "black")
+            .set("stroke", color)
             .set("stroke-width", STROKE_WIDTH / 2.0)
             .set("d", v_line);
         document = document.add(v_node);
         let h_node = Path::new()
             .set("fill", "none")
-            .set("stroke", "black")
+            .set("stroke", color)
             .set("stroke-width", STROKE_WIDTH / 2.0)
             .set("d", h_line);
         document = document.add(h_node);
@@ -219,7 +224,7 @@ fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64]) -> SVG {
 
     document = document.add(text);
     let heigth_stride_perc = 1.0 / (avg_ranks.len() * 3) as f64;
-    let start_y = (START_Y_PERC+0.02) * height as f64;
+    let start_y = (START_Y_PERC + 0.02) * height as f64;
     let mut h = 0;
     let mut last_x2 = -1.0;
     for i in (0..avg_ranks.len()).rev() {
@@ -256,7 +261,6 @@ fn draw_cliques(mut document: SVG, cd: f64, avg_ranks: &[f64]) -> SVG {
     document
 }
 
-
 #[pyfunction]
 #[pyo3(signature = (cd, avg_ranks, labels, title=None, out_file=None, fig_size=None))]
 pub fn cd_diagram(
@@ -267,15 +271,14 @@ pub fn cd_diagram(
     out_file: Option<String>,
     fig_size: Option<(usize, usize)>,
 ) -> PyResult<()> {
-    
     let delta = 8;
     let offset_heigth = 32;
     let (width, height) = fig_size.unwrap_or((512, 256.max(labels.len() * delta + offset_heigth)));
 
     let ruler_step = 6;
-    let number = (labels.len().ilog10()+1) * ruler_step;
+    let number = (labels.len().ilog10() + 1) * ruler_step;
     let min_ruler_width = number * labels.len() as u32;
-    let width = width.max(((min_ruler_width as f64)/0.6) as usize);
+    let width = width.max(((min_ruler_width as f64) / 0.6) as usize);
     let mut document = Document::new()
         .set("height", height)
         .set("width", width)
@@ -284,7 +287,7 @@ pub fn cd_diagram(
     // Draw title
     let title = title.unwrap_or("".to_string());
     let text = Text::new(title)
-        .set("fill", "none")
+        .set("fill", "black")
         .set("stroke", "black")
         .set("stroke-width", 1.0)
         .set("font-size", FONT_SIZE)
@@ -294,7 +297,7 @@ pub fn cd_diagram(
 
     document = document.add(text);
     // Draw ruler
-    document = draw_ruler(document, avg_ranks.len()-1);
+    document = draw_ruler(document, avg_ranks.len() - 1);
     // Draw models
     document = draw_models(document, &labels, &avg_ranks);
     // Draw cliques
@@ -302,5 +305,4 @@ pub fn cd_diagram(
 
     svg::save(out_file.unwrap_or("image.svg".to_string()), &document).unwrap();
     Ok(())
-
 }
