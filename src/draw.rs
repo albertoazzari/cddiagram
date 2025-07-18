@@ -88,7 +88,6 @@ fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64], lowest_c
     let start_x = 0.2 * width as f64;
     let end_x = 0.8 * width as f64;
 
-    let heigth_stride_perc = 1.0 / (labels.len() + 1) as f64 * 2.0;
     let half_count = labels.len() / 2;
 
     for (i, (label, value)) in labels.iter().zip(avg_ranks).enumerate() {
@@ -101,8 +100,8 @@ fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64], lowest_c
         let color = if i % 2 == 0 { "gray" } else { "black" };
         if i < half_count {
             let end_y = lowest_clique
-                + (heigth_stride_perc * ((i as f64) * (height as f64 - lowest_clique)))
-                + FONT_SIZE as f64
+                + (((i as f64) * (height as f64 - lowest_clique)) / (labels.len() / 2 + 1) as f64)
+                + FONT_SIZE as f64 / 2.0
                 + STROKE_WIDTH;
             v_line = Data::new()
                 .move_to((x, start_y))
@@ -123,9 +122,9 @@ fn draw_models(mut document: SVG, labels: &[String], avg_ranks: &[f64], lowest_c
                 .set("y", end_y);
         } else {
             let end_y = lowest_clique
-                + (heigth_stride_perc
-                    * ((labels.len() - i - 1) as f64 * (height as f64 - lowest_clique)) as f64)
-                + FONT_SIZE as f64
+                + ((labels.len() - i - 1) as f64 * (height as f64 - lowest_clique)
+                    / (labels.len() / 2 + 1) as f64)
+                + FONT_SIZE as f64 / 2.0
                 + STROKE_WIDTH;
             v_line = Data::new()
                 .move_to((x, start_y))
