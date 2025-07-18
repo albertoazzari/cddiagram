@@ -1,0 +1,55 @@
+<svg height="180" style="background-color:white" width="600" xmlns="http://www.w3.org/2000/svg">
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="300" y="170">
+
+</text>
+<path d="M120,47 L480,47 z" fill="none" stroke="black" stroke-width="4"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="120" y="32">
+10
+</text>
+<path d="M120,49 L120,42 z" fill="none" stroke="black" stroke-width="4"/>
+<path d="M140,49 L140,45 z" fill="none" stroke="black" stroke-width="4"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="160" y="32">
+9
+</text>
+<path d="M160,49 L160,42 z" fill="none" stroke="black" stroke-width="4"/>
+<path d="M180,49 L180,45 z" fill="none" stroke="black" stroke-width="4"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="200" y="32">
+8
+</text>
+<path d="M200,49 L200,42 z" fill="none" stroke="black" stroke-width="4"/>
+<path d="M220,49 L220,45 z" fill="none" stroke="black" stroke-width="4"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="240" y="32">
+7
+</text>
+<path d="M240,49 L240,42 z" fill="none" stroke="black" stroke-width="4"/>
+<path d="M260,49 L260,45 z" fill="none" stroke="black" stroke-width="4"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="280" y="32">
+6
+</text>
+<path d="M280,49 L280,42 z" fill="none" stroke="black" stroke-width="4"/>
+<path d="M300,49 L300,45 z" fill="none" stroke="black" stroke-width="4"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="320" y="32">
+5
+</text>
+<path d="M320,49 L320,42 z" fill="none" stroke="black" stroke-width="4"/>
+<path d="M340,49 L340,45 z" fill="none" stroke="black" stroke-width="4"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="360" y="32">
+4
+</text>
+<path d="M360,49 L360,42 z" fill="none" stroke="black" stroke-width="4"/>
+<path d="M380,49 L380,45 z" fill="none" stroke="black" stroke-width="4"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="400" y="32">
+3
+</text>
+<path d="M400,49 L400,42 z" fill="none" stroke="black" stroke-width="4"/>
+<path d="M420,49 L420,45 z" fill="none" stroke="black" stroke-width="4"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="440" y="32">
+2
+</text>
+<path d="M440,49 L440,42 z" fill="none" stroke="black" stroke-width="4"/>
+<path d="M460,49 L460,45 z" fill="none" stroke="black" stroke-width="4"/>
+<text fill="none" font-size="10" stroke="black" stroke-width="1" text-anchor="middle" x="480" y="32">
+1
+</text>
+<path d="M480,49 L480,42 z" fill="none" stroke="black" stroke-width="4"/>
+</svg>

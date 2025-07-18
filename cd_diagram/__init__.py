@@ -6,7 +6,7 @@ import numpy as np
 from scipy.stats import friedmanchisquare
 
 @typechecked
-def draw_cd_diagram(samples: Union[pd.DataFrame, np.ndarray], labels: List[str], title: Optional[str]=None,  out_file: Optional[str]=None, fig_size: Optional[tuple[int, int]]=None):
+def draw_cd_diagram(samples: Union[pd.DataFrame, np.ndarray], labels: List[str], title: Optional[str]=None,  out_file: Optional[str]=None):
     
     alpha = 0.05
 
@@ -26,7 +26,7 @@ def draw_cd_diagram(samples: Union[pd.DataFrame, np.ndarray], labels: List[str],
         avg_ranks = pd.DataFrame(samples).rank(ascending=False, axis=1).mean(axis=0).values
         sorted_indices = np.argsort(-avg_ranks)
 
-        cd_diagram.cd_diagram(CD, avg_ranks[sorted_indices], [labels[i] for i in sorted_indices], title, out_file, fig_size)
+        cd_diagram.cd_diagram(CD, avg_ranks[sorted_indices], [labels[i] for i in sorted_indices], title, out_file)
     else:
         print('The null hypothesis of Friedman Test cannot be rejected')
 
