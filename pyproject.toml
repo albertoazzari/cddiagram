@@ -16,7 +16,6 @@ dependencies = [
     "maturin",
     "numpy",
     "pandas",
-    "scikit-posthocs",
     "scipy",
     "typeguard",
 ]
